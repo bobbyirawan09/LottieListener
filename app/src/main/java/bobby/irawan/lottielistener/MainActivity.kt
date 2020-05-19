@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         lottie_animation_view.setAnimationFromUrl("https://assets7.lottiefiles.com/private_files/lf30_yP8raD.json")
-        lottie_animation_view.addAnimatorUpdateListener {
-            val progress = (it.animatedValue as Float * 100).toInt()
+        lottie_animation_view.addAnimatorUpdateListener {valueAnimator ->
+            val progress = (valueAnimator.animatedValue as Float * 100).toInt()
             text_view_progress.text = progress.toString() + "%"
             if (progress >= 50 && progress != 0) {
                 lottie_animation_view.pauseAnimation()
