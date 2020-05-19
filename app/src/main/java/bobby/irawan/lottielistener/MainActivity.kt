@@ -17,12 +17,12 @@ class MainActivity : AppCompatActivity() {
         lottie_animation_view.addAnimatorUpdateListener {
             val progress = (it.animatedValue as Float * 100).toInt()
             text_view_progress.text = progress.toString() + "%"
-//            if (progress >= 50 && progress != 0) {
-//                lottie_animation_view.pauseAnimation()
-//                text_view_information.text = "Already hit 50%"
-//            } else {
-//                text_view_information.text = ""
-//            }
+            if (progress >= 50 && progress != 0) {
+                lottie_animation_view.pauseAnimation()
+                text_view_information.text = "Already hit 50%"
+            } else {
+                text_view_information.text = ""
+            }
         }
 
         button_cancel.setOnClickListener {
